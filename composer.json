@@ -1,0 +1,67 @@
+{
+    "name": "loopcraft/msgowl",
+    "description": "This is my package msgowl",
+    "keywords": [
+        "loopcraft",
+        "laravel",
+        "msgowl"
+    ],
+    "homepage": "https://github.com/loopcraft/msgowl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "loopcraft",
+            "email": "developers@theloopcraft.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/contracts": "^8.73",
+        "spatie/laravel-package-tools": "^1.9.2"
+    },
+    "require-dev": {
+        "nunomaduro/collision": "^5.10",
+        "nunomaduro/larastan": "^1.0",
+        "orchestra/testbench": "^6.22",
+        "pestphp/pest": "^1.21",
+        "pestphp/pest-plugin-laravel": "^1.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Loopcraft\\MsgOwl\\": "src",
+            "Loopcraft\\MsgOwl\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Loopcraft\\MsgOwl\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Loopcraft\\MsgOwl\\MsgOwlServiceProvider"
+            ],
+            "aliases": {
+                "MsgOwl": "MsgOwl"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
