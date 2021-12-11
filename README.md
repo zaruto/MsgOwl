@@ -1,4 +1,4 @@
-# This is my package msgowl
+# This is msgowl 
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/loopcraft/msgowl.svg?style=flat-square)](https://packagist.org/packages/loopcraft/msgowl)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/loopcraft/msgowl/run-tests?label=tests)](https://github.com/loopcraft/msgowl/actions?query=workflow%3Arun-tests+branch%3Amain)
