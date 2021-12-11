@@ -9,12 +9,7 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 
 ## Support us
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/MsgOwl.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/MsgOwl)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
+[<img src="https://www.local.mv/wp-content/uploads/listing-uploads/logo/2020/01/LoopCraft_logo.png" width="419px" />](https://theloopcraft.com/)
 ## Installation
 
 You can install the package via composer:
@@ -32,14 +27,32 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'sender' =>  env('MSG_OWL_SENDER'), //required
+    
+    'urls' => [
+        'otp' =>  env('MSG_OWL_OTP_URL', 'https://otp.msgowl.com'),
+        'rest' =>  env('MSG_OWL_REST_URL', 'https://rest.msgowl.com'),
+    ],
+    
+    'keys' => [
+        'rest_key' =>  env('MSG_OWL_REST_KEY'),  //required
+        'otp_key' => env('MSG_OWL_OTP_KEY'),  //required
+    ],
+    
+    'notification' => [
+        'active' => env('MSG_OWL_NOTIFICATION_ACTIVE', true),
+        'threshold' => 50,
+        'contact_number' => env('MSG_OWL_SMS_NUMBER'),  //required if notification active is true
+        'message' => env('MSG_OWL_SMS_MSG', 'Your MsgOwl balance is getting low'), 
+    ],
+
 ];
 ```
 
 ## Usage
 
 ```php
-$msgowl = new Loopcraft\MsgOwl();
-echo $msgowl->echoPhrase('Hello, Loopcraft!');
+MsgOwl::sendMessage('body of sms needed to send','960123456,9603212...',);
 ```
 
 ## Testing
@@ -48,6 +61,12 @@ echo $msgowl->echoPhrase('Hello, Loopcraft!');
 composer test
 ```
 
+
+
+## Credits
+
+- Write test
+- Add OTP support
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
