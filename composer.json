@@ -2,7 +2,7 @@
     "name": "loopcraft/msgowl",
     "description": "This is my package msgowl",
     "keywords": [
-        "loopcraft",
+        "theloopcraft",
         "laravel",
         "msgowl"
     ],
@@ -10,7 +10,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "loopcraft",
+            "name": "zaruto",
             "email": "developers@theloopcraft.com",
             "role": "Developer"
         }
